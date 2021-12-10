@@ -33,9 +33,7 @@ def colisao_tela():
         tartaruga.setpos(x_tartaruga, -380)
 #Comida
 def colisao_comida():
-    global pontos
-    global vidas
-    global vidas_por_pontos
+    global pontos, vidas, vidas_por_pontos
 
     #Coordenadas tartaruga
     x_tartaruga = tartaruga.xcor()
@@ -201,16 +199,14 @@ def Veneno():
     Teclas_On()
 #Timer veneno
 def Timer_veneno():
-    global quantidade_por_vez_veneno
-    global permissao_para_prosseguir_veneno
+    global quantidade_por_vez_veneno, permissao_para_prosseguir_veneno
 
     if (permissao_para_prosseguir_veneno == True and quantidade_por_vez_veneno == 1):
         Veneno()
         janela.ontimer(Timer_veneno, 10000)
 #Timer veneno True/False
 def timer_veneno_true():
-    global restart_timer_veneno
-    global quantidade_por_vez_veneno
+    global restart_timer_veneno, quantidade_por_vez_veneno
 
     if (permissao_para_prosseguir_veneno == True):
         quantidade_por_vez_veneno += 1
@@ -231,16 +227,14 @@ def timer_veneno_true():
         quantidade_por_vez_veneno = 1
         janela.ontimer(timer_veneno_true, 10000)
 def timer_veneno_false():
-    global permissao_para_prosseguir_veneno
-    global quantidade_por_vez_veneno
+    global permissao_para_prosseguir_veneno, quantidade_por_vez_veneno
 
     quantidade_por_vez_veneno = 0
     permissao_para_prosseguir_veneno = False
     Timer_veneno()
 #Jogar - Timer_veneno True
 def jogar_timer_veneno_True():
-    global jogar_timer_veneno
-    global quantidade_por_vez_veneno
+    global jogar_timer_veneno, quantidade_por_vez_veneno
 
     jogar_timer_veneno = True
     quantidade_por_vez_veneno = 1
@@ -249,9 +243,7 @@ def jogar_timer_veneno_True():
 #Atalhos#
 #Restart
 def restart():
-    global restart_timer_veneno
-    global iniciar_novamente
-    global perdeu_e_jogar_novamente
+    global restart_timer_veneno, iniciar_novamente, perdeu_e_jogar_novamente
 
     #Animações Off
     janela.tracer(n = 2, delay = None)
@@ -286,14 +278,7 @@ def restart():
     #Animações On
     janela.tracer(n = 1, delay = None)
 def Enter():
-    global iniciar_novamente
-    global pontos
-    global vidas
-    global vidas_por_pontos
-    global perdeu_e_jogar_novamente
-    global restart_timer_veneno
-    global permissao_para_prosseguir_veneno
-    global quantidade_por_vez_veneno
+    global iniciar_novamente, pontos, vidas, vidas_por_pontos, perdeu_e_jogar_novamente, restart_timer_veneno, permissao_para_prosseguir_veneno, quantidade_por_vez_veneno
 
     #Animações Off
     janela.tracer(n = 2, delay = None)
@@ -513,8 +498,7 @@ def texto_sobre():
     regras_e_teclas.write('Voltar', move = False, font = ('Arial', 17, 'bold'))
 #Eventos de clique
 def evento_clique(x, y):
-    global jogar_timer_veneno
-    global permissao_para_prosseguir_veneno
+    global jogar_timer_veneno, permissao_para_prosseguir_veneno
     
     #Animações Off
     janela.tracer(n = 2, delay = None)
